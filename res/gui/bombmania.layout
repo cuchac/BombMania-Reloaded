@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout version="4">
+    <Window Type="DefaultWindow" Name="root" >
+        <Property Name="Text" Value="BomB Mania" />
+        <Property Name="Alpha" Value="0.8" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+        <Property Name="ClippedByParent" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Window Type="TaharezLook/FrameWindow" Name="winMainMenu" >
+            <Property Name="Text" Value="BomB Mania - Main Menu" />
+            <Property Name="Visible" Value="False" />
+            <Property Name="TitlebarFont" Value="Commonwealth-10" />
+            <Property Name="SizingEnabled" Value="False" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{0,280},{0,420}}" />
+            <Property Name="CloseButtonEnabled" Value="False" />
+            <Window Type="TaharezLook/Button" Name="btnNewGame" >
+                <Property Name="Text" Value="Start New Game" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,60},{0,250},{0,110}}" />
+            </Window>
+            <Window Type="TaharezLook/Button" Name="btnExitGame" >
+                <Property Name="Text" Value="Exit Game" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,340},{0,250},{0,390}}" />
+            </Window>
+            <Window Type="TaharezLook/Button" Name="btnNetwork" >
+                <Property Name="Text" Value="Network" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,130},{0,250},{0,180}}" />
+            </Window>
+            <Window Type="TaharezLook/Button" Name="btnOptions" >
+                <Property Name="Text" Value="Options" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,200},{0,250},{0,250}}" />
+            </Window>
+            <Window Type="TaharezLook/Button" Name="btnCredits" >
+                <Property Name="Text" Value="Credits" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,270},{0,250},{0,320}}" />
+            </Window>
+        </Window>
+        <Window Type="DefaultWindow" Name="winLoadingScreen" >
+            <Property Name="Font" Value="Commonwealth-10" />
+            <Property Name="Visible" Value="False" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+            <Window Type="TaharezLook/ProgressBar" Name="barProgress" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="StepSize" Value="0.01" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="CurrentProgress" Value="0" />
+                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,-20},{0,600},{0,10}}" />
+                <Property Name="VerticalAlignment" Value="Bottom" />
+                <Property Name="HorizontalAlignment" Value="Centre" />
+            </Window>
+        </Window>
+        <Window Type="TaharezLook/FrameWindow" Name="winNewGame" >
+            <Property Name="Text" Value="BomB Mania - New Game" />
+            <Property Name="TitlebarFont" Value="Commonwealth-10" />
+            <Property Name="SizingEnabled" Value="False" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{0,520},{0,430}}" />
+            <Window Type="TaharezLook/Button" Name="btnStartGame" >
+                <Property Name="Text" Value="Start New Game" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,280},{0,360},{0,500},{0,410}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textPlayer1" >
+                <Property Name="Text" Value="Player 1" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,42},{0,100},{0,70}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textPlayer2" >
+                <Property Name="Text" Value="Player 2" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,80},{0,100},{0,108}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textPlayer3" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Player 3" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,118},{0,100},{0,146}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textPlayer4" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Player 4" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,156},{0,100},{0,184}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textPlayer5" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Player 5" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,194},{0,100},{0,222}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textPlayer6" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Player 6" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,232},{0,100},{0,260}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textPlayer7" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Player 7" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,270},{0,100},{0,298}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textPlayer8" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Player 8" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,308},{0,100},{0,336}}" />
+            </Window>
+            <Window Type="TaharezLook/Editbox" Name="editPlayer1Name" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Enter Player 1 Name" />
+                <Property Name="MaxTextLength" Value="1073741823" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,210},{0,42},{0,380},{0,70}}" />
+            </Window>
+            <Window Type="TaharezLook/Editbox" Name="editPlayer2Name" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Enter Player 2 Name" />
+                <Property Name="MaxTextLength" Value="1073741823" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,210},{0,80},{0,380},{0,108}}" />
+            </Window>
+            <Window Type="TaharezLook/Editbox" Name="editPlayer3Name" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Enter Player 3 Name" />
+                <Property Name="MaxTextLength" Value="1073741823" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,210},{0,118},{0,380},{0,146}}" />
+            </Window>
+            <Window Type="TaharezLook/Editbox" Name="editPlayer4Name" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Enter Player 4 Name" />
+                <Property Name="MaxTextLength" Value="1073741823" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,210},{0,156},{0,380},{0,184}}" />
+            </Window>
+            <Window Type="TaharezLook/Editbox" Name="editPlayer5Name" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Enter Player 5 Name" />
+                <Property Name="MaxTextLength" Value="1073741823" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,210},{0,194},{0,380},{0,222}}" />
+            </Window>
+            <Window Type="TaharezLook/Editbox" Name="editPlayer6Name" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Enter Player 6 Name" />
+                <Property Name="MaxTextLength" Value="1073741823" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,210},{0,232},{0,380},{0,260}}" />
+            </Window>
+            <Window Type="TaharezLook/Editbox" Name="editPlayer7Name" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Enter Player 7 Name" />
+                <Property Name="MaxTextLength" Value="1073741823" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,210},{0,270},{0,380},{0,298}}" />
+            </Window>
+            <Window Type="TaharezLook/Editbox" Name="editPlayer8Name" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Enter Player 8 Name" />
+                <Property Name="MaxTextLength" Value="1073741823" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,210},{0,308},{0,380},{0,336}}" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comPlayer1Enabled" >
+                <Property Name="Text" Value="Disabled" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,42},{0,200},{0,150}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comPlayer2Enabled" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Disabled" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,80},{0,200},{0,188}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comPlayer3Enabled" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Disabled" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,118},{0,200},{0,226}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comPlayer4Enabled" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Disabled" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,156},{0,200},{0,264}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comPlayer5Enabled" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Disabled" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,194},{0,200},{0,302}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comPlayer6Enabled" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Disabled" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,232},{0,200},{0,340}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comPlayer7Enabled" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Disabled" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,270},{0,200},{0,378}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comPlayer8Enabled" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Disabled" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,308},{0,200},{0,416}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textRounds" >
+                <Property Name="Text" Value="Rounds" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,346},{0,100},{0,374}}" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comRounds" >
+                <Property Name="Text" Value="Rounds" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,346},{0,250},{0,494}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textMap" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Map" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,384},{0,100},{0,412}}" />
+            </Window>
+            <Window Type="TaharezLook/Combobox" Name="comMap" >
+                <Property Name="Text" Value="Map" />
+                <Property Name="ReadOnly" Value="True" />
+                <Property Name="ClippedByParent" Value="False" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,110},{0,384},{0,250},{0,552}}" />
+                <Property Name="MaxEditTextLength" Value="1073741823" />
+            </Window>
+        </Window>
+        <Window Type="TaharezLook/FrameWindow" Name="winResults" >
+            <Property Name="Text" Value="BomB Mania - Results" />
+            <Property Name="Visible" Value="False" />
+            <Property Name="TitlebarFont" Value="Commonwealth-10" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.25,0},{0.25,0},{0.75,0},{0.75,0}}" />
+            <Window Type="TaharezLook/StaticText" Name="textPlayer1Text1" >
+                <Property Name="Text" Value="Player 1" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.1,0},{0.25,0},{0.32,0},{0.35,0}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="textPlayer2Text1" >
+                <Property Name="Text" Value="Player 2" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.1,0},{0.5,0},{0.32,0},{0.6,0}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="editPlayer1Score" >
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.2,0},{0.9,0},{0.4,0}}" />
+            </Window>
+            <Window Type="TaharezLook/StaticText" Name="editPlayer2Score" >
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.45,0},{0.9,0},{0.65,0}}" />
+            </Window>
+            <Window Type="TaharezLook/Button" Name="btnExitResults" >
+                <Property Name="Text" Value="Close" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0.25,0},{0.75,0},{0.75,0},{0.95,0}}" />
+            </Window>
+        </Window>
+        <Window Type="TaharezLook/FrameWindow" Name="winInGameMenu" >
+            <Property Name="Text" Value="BomB Mania - Game Menu" />
+            <Property Name="Visible" Value="False" />
+            <Property Name="TitlebarFont" Value="Commonwealth-10" />
+            <Property Name="SizingEnabled" Value="False" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="TitlebarEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{0,280},{0,420}}" />
+            <Window Type="TaharezLook/Button" Name="btn_gResumeGame" >
+                <Property Name="Text" Value="Resume Game" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,60},{0,250},{0,110}}" />
+            </Window>
+            <Window Type="TaharezLook/Button" Name="btn_gEndGame" >
+                <Property Name="Text" Value="End Game" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,340},{0,250},{0,390}}" />
+            </Window>
+            <Window Type="TaharezLook/Button" Name="btn_gOptions" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Options" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,200},{0,250},{0,250}}" />
+            </Window>
+            <Window Type="TaharezLook/Button" Name="btn_gCredits" >
+                <Property Name="Font" Value="Commonwealth-10" />
+                <Property Name="Text" Value="Credits" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,30},{0,270},{0,250},{0,320}}" />
+            </Window>
+        </Window>
+        <Window Type="DefaultWindow" Name="winMessage" >
+            <Property Name="Visible" Value="False" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{0,500},{0,24}}" />
+            <Property Name="VerticalAlignment" Value="Centre" />
+            <Property Name="HorizontalAlignment" Value="Centre" />
+            <Window Type="TaharezLook/StaticText" Name="textMessage" >
+                <Property Name="Text" >
+</Property>
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+                <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Property Name="VerticalAlignment" Value="Centre" />
+                <Property Name="HorizontalAlignment" Value="Centre" />
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

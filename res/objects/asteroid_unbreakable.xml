@@ -1,0 +1,8 @@
+<object>
+	<textures>
+		<texture filename="asteroid03.bmp"/>
+	</textures>
+	<models>
+		<model filename="asteroid03.3ds"/>
+	</models>
+</object>
