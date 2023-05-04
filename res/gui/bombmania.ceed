@@ -1,0 +1,3 @@
+<Project UUID="bf978d75-64a5-4a7f-99d8-e9a255145cb6" looknfeelsPath="looknfeel" baseDirectory="." imagesetsPath="imagesets" CEGUIVersion="0.8" CEGUIDefaultResolution="1280x720" layoutsPath="layouts" version="1" schemesPath="schemes" xmlSchemasPath="xml_schemas" fontsPath="fonts">
+    <Items/>
+</Project>
