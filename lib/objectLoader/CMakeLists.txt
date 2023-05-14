@@ -1,5 +1,5 @@
 #INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
-add_library (objectLoader 3dsloader.cpp main.cpp mat_vect.cpp object.cpp texture.cpp loader.cpp)
+add_library (objectLoader 3dsloader.cpp mat_vect.cpp object.cpp texture.cpp loader.cpp)
 
 IF(WIN32)
 	TARGET_LINK_LIBRARIES(objectLoader libpng xml )

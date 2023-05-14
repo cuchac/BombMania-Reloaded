@@ -72,7 +72,13 @@ void Loading::drawFrame()
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
    setCamera();
 
-   guiSystem.renderAllGUIContexts();
+    glDisable(GL_DEPTH_TEST);
+    glDisable(GL_TEXTURE_2D);
+
+    guiSystem.renderAllGUIContexts();
+
+    glEnable(GL_TEXTURE_2D);
+    glEnable(GL_DEPTH_TEST);
 
    glFlush();
    glutSwapBuffers();

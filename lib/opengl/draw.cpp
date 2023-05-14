@@ -52,7 +52,15 @@ void onDisplay(void)
          ((GameOpengl*)game)->players[x]->Draw();
    }
    
+
+   glDisable(GL_DEPTH_TEST);
+   glDisable(GL_TEXTURE_2D);
+   glBindTexture(GL_TEXTURE_2D, 0);
+
    menu->drawFrame();
+
+   glEnable(GL_TEXTURE_2D);
+   glEnable(GL_DEPTH_TEST);
    
    glFlush();
    glutSwapBuffers();

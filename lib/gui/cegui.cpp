@@ -25,34 +25,29 @@ CEGui::CEGui(){
    glutSetCursor(GLUT_CURSOR_NONE);
 
    renderer = &CEGUI::OpenGLRenderer::bootstrapSystem();
-   
-   // Set the clear color
-   glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     // initialise the required dirs for the DefaultResourceProvider
-   CEGUI::DefaultResourceProvider* rp = static_cast<CEGUI::DefaultResourceProvider*>
+   auto rp = dynamic_cast<CEGUI::DefaultResourceProvider*>
          (CEGUI::System::getSingleton().getResourceProvider());
 
-   char dataPath[] = DATA_PATH GUI_PATH;
+   auto dataPath = strdup(CREATE_PATH(GUI_PATH));
    rp->setResourceGroupDirectory("schemes", dataPath);
    rp->setResourceGroupDirectory("imagesets", dataPath);
    rp->setResourceGroupDirectory("fonts", dataPath);
    rp->setResourceGroupDirectory("layouts", dataPath);
    rp->setResourceGroupDirectory("looknfeels", dataPath);
    rp->setResourceGroupDirectory("lua_scripts", dataPath);
+   free(dataPath);
 
    CEGUI::ImageManager::setImagesetDefaultResourceGroup("imagesets");
    CEGUI::Font::setDefaultResourceGroup("fonts");
    CEGUI::Scheme::setDefaultResourceGroup("schemes");
    CEGUI::WidgetLookManager::setDefaultResourceGroup("looknfeels");
    CEGUI::WindowManager::setDefaultResourceGroup("layouts");
-   CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts"); 
+   CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts");
 
    // load in the scheme file, which auto-loads the TaharezLook imageset
    CEGUI::SchemeManager::getSingleton().createFromFile("TaharezLook.scheme");
-
-   // load in a font.  The first font loaded automatically becomes the default font.
-   //CEGUI::FontManager::getSingleton().createFromFile("Commonwealth-10.font");
 
    CEGUI::Window* root = CEGUI::WindowManager::getSingleton().loadLayoutFromFile("bombmania.layout");
    CEGUI::System::getSingleton().getDefaultGUIContext().setRootWindow(root);
@@ -66,8 +61,6 @@ CEGui::CEGui(){
    this->windows[wIngameMenu] = new IngameMenu("winInGameMenu", root);
    this->windows[wNewGame] = new NewGame("winNewGame", root);
    this->windows[wMessageBox] = new MessageBox("winMessage", root);
-
-
 }
 
 CEGui::~CEGui(){
@@ -125,9 +118,9 @@ void CEGui::reshape(int w, int h)
    glViewport (0, 0, (GLsizei) w, (GLsizei) h);
    glMatrixMode (GL_PROJECTION);
    glLoadIdentity ();
-   gluPerspective(60.0, (GLfloat) w/(GLfloat) h, 1.0, 50.0);
+   gluPerspective(45.0, (GLfloat) w/(GLfloat) h, 0.1, 100.0);
    glMatrixMode(GL_MODELVIEW);
-   CEGUI::OpenGLRenderer* renderer = (CEGUI::OpenGLRenderer*)CEGUI::System::getSingleton().getRenderer();
+   auto* renderer = CEGUI::System::getSingleton().getRenderer();
    renderer->setDisplaySize(CEGUI::Sizef((float)w,(float)h));
 }
 
@@ -318,7 +311,6 @@ void CEGui::doFPSUpdate()
 void CEGui::showLoadingScreen(){
    showMenu(wLoading);
    glutDisplayFunc(Loading::onLoading);
-   glutMainLoop();
 }
 
 

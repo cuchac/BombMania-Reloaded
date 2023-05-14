@@ -9,16 +9,16 @@
 //Define the constants .... may be implemented furtermore in settings
 #define LIVES 2 //Number of players lives on game start
 
-#ifndef BOMBMANIA_DATA_PATH
+#ifndef DATA_PATH
 #warning "Using fallback data path!"
-#define BOMBMANIA_DATA_PATH "./data/"
+#define DATA_PATH "./res/"
 #endif
 
-#define CREATE_PATH(a) (Settings::s_sExeDir + (a)).c_str()
+#define CREATE_PATH(a) (Settings::s_sDataDir + (a)).c_str()
 
 #define MODELS_PATH "models/"
 #define OBJECTS_PATH "objects/"
-#define TEXTURES_PATH "textures/"
+#define TEXTURES_PATH "bitmaps/"
 #define LEVELS_PATH "levels/"
 #define GUI_PATH "gui/"
 

@@ -61,7 +61,7 @@ class Settings
       static Settings*  getInstance();
       
    public:
-      static std::string s_sExeDir;
+      static std::string s_sDataDir;
 
    private:
       PlayersList       m_players;

@@ -46,7 +46,7 @@ class CEGui {
       void messageBox(const char * message);
       void setFocus(enum windowName window);
       
-      static void drawFrame(void);
+      void drawFrame();
 
       static void mouseMotion(int x, int y);
       static bool mouseButton(int button, int state, int x, int y);

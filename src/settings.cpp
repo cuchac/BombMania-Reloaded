@@ -27,7 +27,7 @@
 #include <GL/glut.h>
 
 Settings* Settings::m_pInstance = NULL;
-std::string Settings::s_sExeDir = "./";
+std::string Settings::s_sDataDir = "./";
 
 Settings::Settings()
 {

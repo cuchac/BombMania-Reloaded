@@ -72,11 +72,12 @@ void onSpecialUp(int key, int _x, int _y){
          ((PlayerOpengl*)game->players[x])->setPressedKey(key, false);
 }
 
-void onKeyboard(unsigned char key, int _x, int _y){
+void onKeyboard(unsigned char key, int x, int y)
+{
    if(game->handleKey(key))
       return;
    
-   if(CEGui::keyChar(key, _x, _y))
+   if(CEGui::keyChar(key, x, y))
       return;
    
    if(game)

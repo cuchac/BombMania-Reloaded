@@ -23,19 +23,18 @@ GameOpengl * game;
 pthread_t drawThread;
 
 void exitFunction(){
-  glutSetKeyRepeat(GLUT_KEY_REPEAT_ON);
 }
 
 void init(int argc, char **argv){
     atexit(exitFunction);
 
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
+    glutInitDisplayMode(GLUT_DEPTH);
 
     glutCreateWindow(WINDOW_TITLE);
     glutReshapeWindow(WINDOW_WIDTH, WINDOW_HEIGHT);
 
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glViewport(0, 0, windowWidth, windowHeight);
 
     //glutSetKeyRepeat(GLUT_KEY_REPEAT_ON);
@@ -51,13 +50,13 @@ void init(int argc, char **argv){
     glShadeModel(GL_SMOOTH);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
     glEnable(GL_TEXTURE_2D);
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+    // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     //glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
     //glEnable(GL_ALPHA_TEST);
     //glEnable(GL_BLEND);
-    glAlphaFunc(GL_GREATER, 0.1f);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    // glAlphaFunc(GL_GREATER, 0.1f);
+    // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_TEXTURE_2D);
 
     world = new WorldOpengl();
@@ -84,10 +83,8 @@ void showMenu(){
    menu = new CEGui();
    glutReshapeFunc(onResize);
    menu->showLoadingScreen();
-
-   glutMainLoop();
-   glutSetKeyRepeat(GLUT_KEY_REPEAT_ON);
    
+   glutMainLoop();   
 }
 //void draw(WorldPiece* piece);	//Function to draw given world piece
 //void cleanScreen(){};
