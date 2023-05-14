@@ -134,7 +134,7 @@ bool CEGui::mouseButton(int button, int state, int x, int y)
    if(CEGui::displayedWindows == 0)
       return false;
    
-   auto context = CEGUI::System::getSingleton().getDefaultGUIContext();
+   auto &context = CEGUI::System::getSingleton().getDefaultGUIContext();
    
    switch(button)
    {
@@ -182,7 +182,7 @@ bool CEGui::keyChar(unsigned char key, int x, int y)
    if(CEGui::displayedWindows == 0)
       return false;
    
-   auto context = CEGUI::System::getSingleton().getDefaultGUIContext();
+   auto &context = CEGUI::System::getSingleton().getDefaultGUIContext();
    
    handleModifierKeys();
 
@@ -216,7 +216,7 @@ bool CEGui::keySpecial(int key, int x, int y)
    
    handleModifierKeys();
    
-   auto context = CEGUI::System::getSingleton().getDefaultGUIContext();
+   auto &context = CEGUI::System::getSingleton().getDefaultGUIContext();
 
    GlutKeyMapping* mapping = specialKeyMap;
 
@@ -233,17 +233,15 @@ bool CEGui::keySpecial(int key, int x, int y)
    return true;
 }
 
-bool CEGui::handleModifierKeys(void)
+bool CEGui::handleModifierKeys()
 {
    int mods = glutGetModifiers();
-
-   CEGUI::System& cesys = CEGUI::System::getSingleton();
 
    bool shift = mods&GLUT_ACTIVE_SHIFT;
    bool ctrl  = mods&GLUT_ACTIVE_CTRL;
    bool alt   = mods&GLUT_ACTIVE_ALT;
    
-   auto context = CEGUI::System::getSingleton().getDefaultGUIContext();
+   auto &context = CEGUI::System::getSingleton().getDefaultGUIContext();
 
     // shift
    if (shift != bool(modifiers&GLUT_ACTIVE_SHIFT))

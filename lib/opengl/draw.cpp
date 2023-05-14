@@ -38,12 +38,14 @@ void onDisplay(void)
    }
 
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-   setCamera();
 
-   //drawEnv();
-   
-   int x;
    if(game){
+       setCamera();
+
+       drawEnv();
+
+       int x;
+
       for(x=0;x<world->worldWidth;x++)
          for(int y=0;y<world->worldHeight;y++)
             world->worldData[x][y]->Draw();
